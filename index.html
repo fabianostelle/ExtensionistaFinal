@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Edu-Tech - Protótipo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; }
+    header { background:#1b6b37; color:white; padding:18px; text-align:center; }
+    .container { max-width:900px; margin:18px auto; padding:12px; }
+    .card { background:white; padding:18px; margin-bottom:16px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+    .btn { background:#1b6b37; color:white; padding:10px 14px; border:none; border-radius:6px; cursor:pointer; }
+    .btn.secondary { background:#eee; color:#222; border:1px solid #ddd; }
+    .menu-btn { width:100%; text-align:left; background:#f0f0f0; padding:12px; border-radius:6px; border:none; margin-bottom:10px; cursor:pointer; font-size:16px; }
+    .hidden { display:none; }
+    img { width:100%; border-radius:8px; margin-top:10px; object-fit:cover; max-height:320px; }
+    input[type="text"], input[type="password"], textarea { width:100%; padding:8px; margin-top:6px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .small { font-size:0.9rem; color:#555; }
+    .preview-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .preview-row img { width:120px; height:80px; object-fit:cover; border-radius:6px; }
+    a { color:#1b6b37; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Edu-Tech</h1>
+  <p>Profissionalização na Construção Civil</p>
+</header>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div id="telaLogin" class="card">
+    <h2>Acesse sua conta</h2>
+    <label>E-mail</label>
+    <input id="loginEmail" type="text" placeholder="seu@email.com">
+    <label>Senha</label>
+    <input id="loginSenha" type="password" placeholder="********">
+    <div style="margin-top:8px;">
+      <button class="btn" onclick="abrirMenu()">Entrar</button>
+    </div>
+    <p class="small" style="margin-top:12px;">(Protótipo: qualquer e-mail/senha acessa)</p>
+  </div>
+
+  <!-- MENU PRINCIPAL -->
+  <div id="telaMenu" class="card hidden">
+    <h2>Menu principal</h2>
+<p class='img-desc'>Selecione uma das opções do menu e começe sua jornada na construção civil.</p>
+    <button class="menu-btn" onclick="abrirPOPs()">POPs</button>
+    <button class="menu-btn" onclick="abrirRoteiro()">Roteiro do dia</button>
+    <button class="menu-btn" onclick="abrirConteudo()">Conteúdos técnicos</button>
+    <button class="menu-btn" onclick="abrirChecklist()">Checklist diário</button>
+    <button class="menu-btn" onclick="abrirFormulario()">Formulário de segurança</button>
+    <button class="menu-btn" onclick="abrirDiario()">Diário de obra</button>
+    <button class="menu-btn" onclick="abrirRegistro()">Registro fotográfico</button>
+    <button class="menu-btn" onclick="abrirMapa()">Mapa da obra</button>
+    <button class="menu-btn" onclick="abrirMateriais()">Controle de materiais</button>
+    <button class="menu-btn" onclick="abrirTreinamentos()">Treinamentos</button>    
+  </div>
+
+  <!-- POPS -->
+  <div id="telaPOPs" class="card hidden">
+    <h2>POPs de execução</h2>
+    <p class='img-desc'>Nesta tela apresenta a descrição técnica detalhada das atividades.</p>   
+    <p><strong>Servente:</strong></p>
+    <ul>
+      <li><strong>Preparar o canteiro de obras:</strong> inclui organizar o espaço de trabalho, remover materiais soltos, definir áreas de circulação e garantir que o ambiente esteja adequado para início das atividades, evitando acidentes e atrasos.</li>
+
+      <li><strong>Remover entulhos:</strong> realizar a limpeza contínua de resíduos gerados, transportando e descartando corretamente o material em local apropriado, contribuindo para a segurança e fluidez da obra.</li>
+
+      <li><strong>Manter limpeza do local:</strong> envolve varrição, organização de ferramentas, drenagem de água quando necessário e manutenção geral do ambiente, garantindo produtividade e prevenção de riscos.</li>
+    </ul>
+    <p><strong>Pedreiro:</strong></p>
+    <ul>
+      <li><strong>Nivelamento da base:</strong> consiste em verificar desníveis, corrigir falhas estruturais e garantir que a superfície esteja regular para receber a alvenaria, evitando patologias futuras.</li>
+
+      <li><strong>Preparar argamassa:</strong> envolve medir e misturar corretamente areia, cimento e água, seguindo o traço especificado, assegurando resistência, aderência e trabalhabilidade adequadas.</li>
+
+      <li><strong>Assentar blocos:</strong> etapa na qual o pedreiro aplica a argamassa uniformemente, posiciona os blocos com alinhamento e prumo, confere o nivelamento e realiza ajustes finos para garantir estabilidade da parede.</li>
+    </ul>
+    <div style="margin-top:10px;">
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>
+
+  <!-- ROTEIRO -->
+  <div id="telaRoteiro" class="card hidden">
+    <h2>Roteiro do dia</h2>
+    <p class='img-desc'>Roteiro das atividades diária. Siga corretamente a sequência abaixo para atingir o seu sucesso diariamente.</p>
+    <ul>
+      <li><strong>08:00 - Abertura / Planejamento:</strong> realização do briefing matinal, distribuição das atividades entre equipes, verificação de EPIs e condições gerais do canteiro antes do início das operações.</li>
+
+      <li><strong>09:00 - Instalação de piso (setor A):</strong> preparação da superfície, conferência de nivelamento, aplicação de argamassa e início do assentamento das peças conforme POP.</li>
+
+      <li><strong>13:00 - Reunião de alinhamento:</strong> encontro rápido para revisar andamento, registrar imprevistos, redirecionar equipes e ajustar o cronograma caso necessário.</li>
+
+      <li><strong>14:00 - Nivelamento de parede:</strong> execução da etapa de regularização das superfícies, aplicação de massa apropriada e checagem de prumo e esquadro.</li>
+
+      <li><strong>16:30 - Encerramento e limpeza:</strong> finalização das atividades, armazenamento de ferramentas, remoção de resíduos e preparação do ambiente para o dia seguinte.</li>
+    </ul>
+    <div style="margin-top:10px;">
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO TÉCNICO -->
+  <div id="telaConteudo" class="card hidden">
+    <h2>Como assentar piso</h2>
+    <ol>
+      <li><strong>Preparar a superfície:</strong> realizar a limpeza completa removendo poeira, resíduos, partes soltas e verificar desníveis. Caso necessário, aplicar regularização para garantir perfeita aderência do piso.</li>
+
+      <li><strong>Aplicar a argamassa conforme receita técnica:</strong> seguir rigorosamente o traço recomendado pelo fabricante, garantindo plasticidade, aderência e tempo de manuseio adequados. A aplicação deve ser feita com desempenadeira dentada.</li>
+
+      <li><strong>Assentar peças usando espaçadores e nivelar:</strong> posicionar as placas cerâmicas ou porcelanatos com precisão, utilizando espaçadores e sistemas de nivelamento para evitar desníveis (popularmente conhecidos como "dentes").</li>
+
+      <li><strong>Rejuntar após cura inicial (24h) e realizar limpeza final:</strong> aplicar o rejunte de forma uniforme, preencher totalmente as juntas e remover excessos. Finalizar com limpeza fina para entrega do acabamento.</li>
+    </ol>
+    <div style="margin-top:10px;">
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div id="telaChecklist" class="card hidden">
+    <h2>Checklist diário</h2>   
+    <label><input type="checkbox"> <strong>EPIs completos:</strong> verificação de capacete, luvas, óculos, botas e demais equipamentos obrigatórios antes do início das atividades, garantindo conformidade com normas de segurança.</label><br>
+
+    <label><input type="checkbox"> <strong>Área limpa:</strong> inspeção do ambiente para assegurar que não haja entulhos, materiais soltos ou obstáculos que possam gerar acidentes ou prejudicar a execução das tarefas.</label><br>
+
+    <label><input type="checkbox"> <strong>Materiais organizados:</strong> checagem de que todos os insumos e ferramentas estão no local adequado, facilitando o fluxo de trabalho e aumentando a produtividade.</label><br>
+
+    <label><input type="checkbox"> <strong>Riscos identificados:</strong> avaliação de pontos críticos como superfícies escorregadias, instalações elétricas expostas, escavações ou estruturas instáveis, com registro e sinalização imediata.</label><br>
+    <div style="margin-top:10px;">
+      <button class="btn">Salvar checklist</button>
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>
+
+  <!-- FORMULÁRIO -->
+  <div id="telaFormulario" class="card hidden">
+    <h2>Formulário de segurança</h2>    
+    <label>Descrição do risco</label><br>
+    <input id="riscoDesc" type="text" placeholder="Descreva o risco...">
+
+    <label>Ação corretiva</label><br>
+    <input id="acaoCorretiva" type="text" placeholder="Ação corretiva proposta...">
+    <div style="margin-top:10px;">
+      <p class="small" style="margin-top:10px; color:#555;">
+        Exemplos de riscos comuns:<br>
+        – Superfícies escorregadias<br>
+        – Materiais estocados incorretamente<br>
+        – Ausência de sinalização<br>
+        – Equipamentos sem manutenção<br>
+      </p>
+      <button class="btn" onclick="enviarFormulario()">Enviar</button>
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+    <p id="formMsg" class="small" style="margin-top:8px;"></p>
+  </div>
+
+  <!-- DIÁRIO DE OBRA -->
+  <div id="telaDiario" class="card hidden">
+    <h2>Diário de obra</h2>    
+    <textarea id="diarioText" placeholder="Descreva atividades, avanços e imprevistos do dia..." style="width:100%;height:110px;padding:10px;margin-top:8px;"></textarea>
+    <div style="margin-top:10px;">
+      <ul>
+        <li><strong>Atividades executadas:</strong> descreva com detalhes o que foi realizado e por qual equipe.</li>
+
+        <li><strong>Condições do tempo:</strong> importante para justificar atrasos ou mudanças de planejamento.</li>
+
+        <li><strong>Entregas e recebimentos:</strong> materiais recebidos, quantidades e responsáveis.</li>
+
+        <li><strong>Ocorrências e imprevistos:</strong> falhas, riscos identificados, interrupções ou eventos extraordinários.</li>
+
+        <li><strong>Decisões tomadas:</strong> definições técnicas, alterações de projeto ou orientações dadas.</li>
+      </ul>
+
+      <button class="btn" onclick="salvarDiario()">Salvar</button>
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+    <p id="diarioMsg" class="small" style="margin-top:8px;"></p>
+  </div>
+
+  <!-- REGISTRO FOTOGRÁFICO -->
+  <div id="telaRegistro" class="card hidden">
+    <h2>Registro fotográfico</h2>    
+    <p class="small">Envie fotos (pré-visualização abaixo):</p>
+
+    <p>Utilize esta área para enviar fotos que evidenciem:</p>
+    <ul>
+      <li><strong>Avanço físico das atividades:</strong> registros do antes, durante e depois das tarefas executadas.</li>
+
+      <li><strong>Condições gerais do canteiro:</strong> organização, estado de limpeza e acessos.</li>
+
+      <li><strong>Qualidade da execução:</strong> detalhes de acabamentos, alinhamentos, nivelamento e uso correto dos materiais.</li>
+
+      <li><strong>Riscos identificados:</strong> situações inseguras que exigem ação corretiva imediata.</li>
+
+      <li><strong>Entregas e recebimentos:</strong> fotos de materiais descarregados, quantidades e condições.</li>
+    </ul>
+
+    <input id="inputFotos" type="file" accept="image/*" multiple>
+    <div id="previewFotos" class="preview-row"></div>
+    <div style="margin-top:10px;">
+      <button class="btn" onclick="enviarFotos()">Enviar</button>
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+    <p id="registroMsg" class="small" style="margin-top:8px;"></p>
+  </div>
+
+  <!-- MAPA -->
+  <div id="telaMapa" class="card hidden">
+    <h2>Mapa da obra</h2>    
+    <p class="small">Visualização das frentes de trabalho, áreas de risco e acessos.</p>
+    <div style="margin-top:10px;">
+      <p>O mapa da obra apresenta a organização espacial do canteiro, permitindo que equipes visualizem setores ativos, áreas restritas e rotas seguras. Ele contribui diretamente para a logística, segurança e eficiência do trabalho.</p>
+
+      <ul>
+        <li><strong>Áreas de risco:</strong> locais com escavações, demolições, movimentação de cargas ou operações críticas. Devem estar sinalizadas e isoladas conforme normas de segurança.</li>
+
+        <li><strong>Frentes de trabalho:</strong> setores onde equipes executam tarefas simultâneas, como alvenaria, nivelamento, instalações elétricas ou acabamento.</li>
+
+        <li><strong>Acessos e rotas seguras:</strong> caminhos liberados para circulação de pedestres, entrada de materiais e movimentação de equipamentos.</li>
+
+        <li><strong>Depósitos e almoxarifado:</strong> pontos de armazenamento de materiais, organizados para garantir fácil acesso e controle.</li>
+
+        <li><strong>Áreas administrativas:</strong> escritório, sala de reunião e local para armazenar documentações.</li>
+      </ul>
+
+      <p>O objetivo deste módulo é facilitar a navegação interna, reduzir riscos e melhorar o planejamento diário da obra.</p>
+
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>
+
+  <!-- MATERIAIS -->
+  <div id="telaMateriais" class="card hidden">
+    <h2>Controle de materiais</h2>    
+    <ul>
+      <li><strong>Cimento – 12 sacos:</strong> usado para preparo de argamassa e concreto. O controle diário garante que não falte material para atividades essenciais como alvenaria e nivelamento.</li>
+
+      <li><strong>Areia – 5 m³:</strong> empregada na composição das argamassas. Monitorar o volume evita interrupções e permite prever a necessidade de reposição.</li>
+
+      <li><strong>Blocos – 320 unidades:</strong> utilizados na elevação das paredes. O registro de quantidade disponível permite planejar etapas construtivas e calcular produtividade da equipe.</li>
+
+      <li><strong>Rejunte – 8 embalagens:</strong> aplicado no acabamento dos pisos e revestimentos. A conferência evita perda de tempo na etapa final de acabamento.</li>
+    </ul>
+    <div style="margin-top:10px;">
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>
+
+  <!-- TREINAMENTOS -->
+  <div id="telaTreinamentos" class="card hidden">
+    <h2>Treinamentos</h2>    
+    <p class="small">Vídeos e documentos para capacitação:</p>
+    <ul>
+      <li><a href="#" onclick="alert('Abrir vídeo (simulado)')"><strong>Vídeo: Segurança ao operar ferramentas:</strong></a> orientações práticas sobre uso correto de ferramentas manuais e elétricas, prevenindo acidentes e melhorando a eficiência.</li>
+
+
+      <li><a href="#" onclick="alert('Abrir PDF (simulado)')"><strong>PDF: Normas de EPIs:</strong></a> documento com diretrizes atualizadas sobre equipamentos obrigatórios, formas de uso, periodicidade de troca e conformidade com normas regulamentadoras.</li>
+
+
+      <li><a href="#" onclick="alert('Abrir vídeo (simulado)')"><strong>Vídeo: Como nivelar parede:</strong></a> demonstração completa do processo de regularização de superfícies, aplicação de massa niveladora, verificação de prumo e correção de imperfeições.</li>
+
+    </ul>
+    <div style="margin-top:10px;">
+      <button class="btn secondary" onclick="voltarMenu()">Voltar</button>
+    </div>
+  </div>  
+</div>
+
+<script>
+  // ---------- Navegação ----------
+  function esconderTudo() {
+    document.querySelectorAll('.card').forEach(el => el.classList.add('hidden'));
+  }
+  function abrirMenu() { esconderTudo(); document.getElementById('telaMenu').classList.remove('hidden'); }
+  function abrirPOPs() { esconderTudo(); document.getElementById('telaPOPs').classList.remove('hidden'); }
+  function abrirRoteiro() { esconderTudo(); document.getElementById('telaRoteiro').classList.remove('hidden'); }
+  function abrirConteudo() { esconderTudo(); document.getElementById('telaConteudo').classList.remove('hidden'); }
+  function abrirChecklist() { esconderTudo(); document.getElementById('telaChecklist').classList.remove('hidden'); }
+  function abrirFormulario() { esconderTudo(); document.getElementById('telaFormulario').classList.remove('hidden'); }
+  function abrirDiario() { esconderTudo(); document.getElementById('telaDiario').classList.remove('hidden'); }
+  function abrirRegistro() { esconderTudo(); document.getElementById('telaRegistro').classList.remove('hidden'); }
+  function abrirMapa() { esconderTudo(); document.getElementById('telaMapa').classList.remove('hidden'); }
+  function abrirMateriais() { esconderTudo(); document.getElementById('telaMateriais').classList.remove('hidden'); }
+  function abrirTreinamentos() { esconderTudo(); document.getElementById('telaTreinamentos').classList.remove('hidden'); }
+  
+  function voltarMenu() { abrirMenu(); }
+
+
+  // ---------- Formulário (simulado) ----------
+  function enviarFormulario() {
+    const desc = document.getElementById('riscoDesc').value.trim();
+    const acao = document.getElementById('acaoCorretiva').value.trim();
+    const msg = document.getElementById('formMsg');
+    if (!desc || !acao) {
+      msg.textContent = 'Preencha a descrição e a ação corretiva.';
+      return;
+    }
+    // Simula envio
+    msg.textContent = 'Formulário enviado (simulação).';
+    setTimeout(()=> msg.textContent = '', 4000);
+  }
+
+  // ---------- Diário ----------
+  function salvarDiario() {
+    const texto = document.getElementById('diarioText').value.trim();
+    const msg = document.getElementById('diarioMsg');
+    if (!texto) { msg.textContent = 'Escreva algo antes de salvar.'; return; }
+    msg.textContent = 'Diário salvo (simulação).';
+    setTimeout(()=> msg.textContent = '', 3000);
+    document.getElementById('diarioText').value = '';
+  }
+
+  // ---------- Registro fotográfico (preview) ----------
+  const inputFotos = document.getElementById('inputFotos');
+  const previewFotos = document.getElementById('previewFotos');
+  inputFotos && inputFotos.addEventListener('change', (evt) => {
+    previewFotos.innerHTML = '';
+    const files = Array.from(evt.target.files).slice(0, 10); // limita 10 previews
+    if (files.length === 0) { previewFotos.innerHTML = '<span class="small">Nenhuma imagem selecionada.</span>'; return; }
+    files.forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        previewFotos.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  function enviarFotos() {
+    const input = document.getElementById('inputFotos');
+    const msg = document.getElementById('registroMsg');
+    if (!input || !input.files || input.files.length === 0) {
+      msg.textContent = 'Selecione ao menos uma foto antes de enviar.';
+      return;
+    }
+    // Simula envio
+    msg.textContent = 'Fotos enviadas (simulação).';
+    setTimeout(()=> msg.textContent = '', 3500);
+    input.value = '';
+    previewFotos.innerHTML = '';
+  }
+
+  // ---------- Inicializa com tela de login ----------
+  (function init() {
+    esconderTudo();
+    document.getElementById('telaLogin').classList.remove('hidden');
+  })();
+
+  //-----------Sair do menu retornando a tela de login ---------
+  function sair() {
+  esconderTudo();
+  document.getElementById('telaLogin').classList.remove('hidden');
+}
+
+
+</script>
+
+    <footer> <!--*Criação do texto no rodapé da página-->
+        <p>&copy; 2025 Fabiano Stelle</p>
+    </footer>
+
+</body>
+</html>
